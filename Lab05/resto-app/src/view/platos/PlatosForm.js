@@ -19,6 +19,7 @@ export class PlatosForm extends React.Component {
     if (this.state.boton === "guardar") {
       if (this.state.editando) {
         console.log("actualizar");
+        
       } else {
         console.log("AGREGAR");
         this.props.agregarPlato();
@@ -54,7 +55,7 @@ export class PlatosForm extends React.Component {
           <Button
             bsStyle="primary"
             type="submit"
-            onClick={() => this.setState({ boton: "nuevo", habilitado: true })}
+            onClick={() => this.setState({ boton: "nuevo", editando: false, habilitado: true })}
             id="btn"
           >
             Nuevo
@@ -69,7 +70,7 @@ export class PlatosForm extends React.Component {
           </Button>
           <Button
             bsStyle="primary"
-            onClick={() => this.setState({ habilitado: true, editando: true })}
+            onClick={() => this.setState({ boton: "editar", editando: true, habilitado: true })}
             id="btn"
           >
             Editar

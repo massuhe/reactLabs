@@ -27,10 +27,12 @@ class App extends Component {
       platoEditar: { nombre: "", precio: 0.0 }
     });
   }
+  
   seleccionarPlato(indice) {
     let platoEditable = this.state.platos[indice];
     this.setState({ platoEditar: platoEditable });
   }
+  
   nuevoPlato() {
     this.setState({ platoEditar: { nombre: "", precio: 0.0 } });
   }
@@ -53,7 +55,7 @@ class App extends Component {
   render() {
     let contenido = <p>Bienvenido</p>;
     switch (this.state.idMenuSeleccionado) {
-      case 1://<PlatoLista platos={this.state.platos} seleccionarPlato={this.seleccionarPlato} borrarPlato={this.borrarPlato}></PlatoLista>
+      case 1:
         contenido = <div>
                       <PlatosForm platoEditar={this.state.platoEditar} actualizarPlato={this.actualizarPlato} nuevo={this.nuevoPlato} agregarPlato={this.addPlato}></PlatosForm>
                       <PlatoLista platos={this.state.platos} seleccionarPlato={this.seleccionarPlato} borrarPlato={this.borrarPlato}></PlatoLista>

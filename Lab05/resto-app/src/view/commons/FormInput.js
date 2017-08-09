@@ -15,7 +15,7 @@ export class FormInput extends React.Component {
         </ControlLabel>
         <FormControl
           disabled={!this.props.editable}
-          type={tipo}
+          type="{tipo}"
           placeholder={this.props.etiqueta + "..."}
           value={this.props.valor}
           onChange={e =>
